@@ -74,6 +74,10 @@ print(np.mean(exp == 4))
 
 
 az.plot_posterior({'x': exp1})
+az.plot_posterior({'ss': exp == 1 })
+az.plot_posterior({'sb': exp == 2 })
+az.plot_posterior({'bs': exp == 3 })
+az.plot_posterior({'bb': exp == 4 })
 az.plot_posterior({'x': exp})
 plt.show()
 
