@@ -3,7 +3,7 @@ Am testat modelul pentru datele y = [0,7,10] si acelasi theta, adica pentru o cr
 
 In acelasi mod am testat si pentru y = [0, 3, 10] si am obtinut ca media scade
 
-Am testat pt y initial si theta = [0.2, 0.5] si am observat ca aceasta medie scade, deoarece cu cat clientii cumpara produsul cu o probabilitate mai mare cu atat avem nevoie de mai putini clienti ca sa cumparam un animit numar de produse
+Am testat pt y initial si theta = [0.2, 0.5], adica cand clientii cumpara cu o mai mare probabilitate un produs si am observat ca aceasta medie scade, deoarece cu cat clientii cumpara produsul cu o probabilitate mai mare cu atat avem nevoie de mai putini clienti ca sa cumparam un animit numar de produse
 
 
 In acelasi mod am testat pentru theta = [0.1, 0.3] si am obtinut o crestere
