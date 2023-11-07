@@ -15,5 +15,5 @@ Luand in calcul aceste date putem conluziona ca:
 - la o scadere a lui y si o crestere a lui theta, distributia scade considerabil
 
 
-Observam ca daca avem o in evidenta o crestere a numarului de clienti ce cumpara un anumit produs intr-o anumita zi, numarul total de clienti care vor intra in magazin este mai mare, de asemenea daca avem o scadere a evidentei numarului de clienti ce cumpara un anumit produs, putem trage concluzia ca numarul total de clienti ce intra in magazin este  mai mic.
+Observam ca daca avem o in evidenta o crestere a numarului de clienti ce cumpara un anumit produs intr-o anumita zi cu o anumita probabilitate, fata de alta zi unde numarul este mai mic, dar cu acceasi probabilitate, numarul total de clienti care vor intra in magazin este mai mare in ziua unde numarul de clienti creste, de asemenea daca avem o scadere, numarul va fi mai mic
 Daca probabilitatea de cumparare a unui produs intr-o zi este mai mare decat in alta zi, inseamna ca avem nevoie de mai putini clienti pentru a cumpara un numar de x produse in zi unde probabilitatea este mai mare, decat in ziua unde este mai mica, deci numarul total de clienti ce intra in magazin este mai mic, invers pentru cand probabilitatea scade
