@@ -91,15 +91,20 @@ from pgmpy.factors.discrete import TabularCPD
 
 model = BayesianNetwork([('Incepere', 'Jucator1'), ('Incepe', 'Jucator2')])
 
-
+p1 = 0.5 * 2/3 * 1.0
+p2= 0.5 * 2/3 * 1.5
+p3 = 0.3 * 0.5 * (2/3+1)
+p4 = 0.3* 0.5 * 1
 cpd_incepere = TabularCPD(variable='Incepere', variable_card=2, values=[[0.5], [0.5]])
-cpd_jucator1 = TabularCPD(variable='Jucator1', variable_card=2, values=[[0.5, 0.5],
-                                                                      [0.5, 0.5]],
-                         evidence=['Incepe'], evidence_card=[2])
+cpd_jucator1 = TabularCPD(variable='Jucator1', variable_card=2, values=[[p1, p2],
+                                                                      [p1, p2]],
+                         evidence=['Incepere'], evidence_card=[2])
 
-cpd_jucator2 = TabularCPD(variable='Jucator2', variable_card=2, values=[[0.5, 0.5, 0.5, 0.5],
-                                                                    [0.5, 0.5, 0.5, 0.5]],
-                        evidence=['Incepere', 'Jucator1'], evidence_card=[2, 2])
+cpd_jucator2 = TabularCPD(variable='Jucator2', variable_card=2, values=[[p3 , p4],
+                                                                      [0.7 * 0.5 * (2/3+1), 0.7 * 0.5 * 1]],
+                         evidence=['Incepere'], evidence_card=[2])
+
+#pro
 print(cpd_incepere)
 print(cpd_jucator1)
 print(cpd_jucator2)
@@ -110,8 +115,8 @@ model.get_cpds()
 model.check_model()
 
 
-from pgmpy.inference import VariableElimination
-infer = VariableElimination(model)
-posterior_p = infer.query(["incepere"], evidence={"Jucator1": 0.5})
+# from pgmpy.inference import VariableElimination
+# infer = VariableElimination(model)
+# posterior_p = infer.query(["incepere"], evidence={"Jucator1": 0.5})
 
 #### 2
