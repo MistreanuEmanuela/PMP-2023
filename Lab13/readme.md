@@ -11,7 +11,7 @@ ex2:
 ![image](https://github.com/MistreanuEmanuela/PMP-2023/assets/100144278/886f95d8-9c38-4112-984f-e181e610a61f)
 
 
-# Prin compararea cu criteriul autocorectiei putem vedea ca modelul necentrat are autocorelatia este mai scazuta adica va avea o convergenta mai rapida
+# Prin compararea cu criteriul autocorectiei putem vedea ca modelul necentrat are autocorelatia mai scazuta adica va avea o convergenta mai rapida
 
 ex3:
 ![image](https://github.com/MistreanuEmanuela/PMP-2023/assets/100144278/b8ed72d4-c81f-495d-ba21-037c6e2a06c8)
