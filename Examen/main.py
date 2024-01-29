@@ -5,6 +5,7 @@ import pymc3 as pm
 import arviz as az
 
 def main():
+    # 1a)
     Data = pd.read_csv('BostonHousing.csv')
     x_1 = Data['rm'].values
     x_2 = Data['crim']
@@ -31,7 +32,7 @@ def main():
 
     scatter_plot(X,y)
     plt.show()
-
+    # 2b
     with pm.Model() as model:
         alpha = pm.Normal('alpha', mu=0, sigma=10)
         beta = pm.Normal('beta', mu=0, sigma=10, shape=3)
@@ -43,16 +44,19 @@ def main():
         trace = pm.sample(10, tune=10, return_inferencedata=True)
     # simulam 10*2 = 20 extrageri
 
+    # c
     az.plot_forest(trace, hdi_prob=0.95, var_names=['beta'])
     print(az.summary(trace, hdi_prob=0.95, var_names=['beta']))
     plt.show()
     #Observam ca beta 0 are cele mai mari valori asadar variabila de care este atasata aceasta este cea care
     # influenteaza cel mai mult modelul, mai precis "rn"
 
+    # d)
     ppc = pm.sample_posterior_predictive(trace, model=model)
     y_ppc = ppc['y_pred']
-    az.plot_posterior({"y": y_ppc}, hdi_prob=0.5)
+    az.plot_posterior({"medv": y_ppc}, hdi_prob=0.5)
     plt.show()
+# Observam o medie de aproximativ 21
 
 
 if __name__ =="__main__":
