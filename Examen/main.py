@@ -32,6 +32,7 @@ def main():
 
     scatter_plot(X,y)
     plt.show()
+    # vizualizam datele
     # 2b
     with pm.Model() as model:
         alpha = pm.Normal('alpha', mu=0, sigma=10)
@@ -43,13 +44,14 @@ def main():
         y_pred = pm.StudentT('y_pred', mu=mu, sigma=epsilon, nu=ν, observed=y)
         trace = pm.sample(10, tune=10, return_inferencedata=True)
     # simulam 10*2 = 20 extrageri
+    # cream modelul sub forma de y = b0 *rn + b1* crin + b2*indus, unde y =medv
 
     # c
     az.plot_forest(trace, hdi_prob=0.95, var_names=['beta'])
     print(az.summary(trace, hdi_prob=0.95, var_names=['beta']))
     plt.show()
     #Observam ca beta 0 are cele mai mari valori asadar variabila de care este atasata aceasta este cea care
-    # influenteaza cel mai mult modelul, mai precis "rn"
+    # influenteaza cel mai mult modelul, mai precis "rn". De asemenea 0 nu se afla in intervalul acesteia, deci stim sigur ca o influenteaza
 
     # d)
     ppc = pm.sample_posterior_predictive(trace, model=model)
