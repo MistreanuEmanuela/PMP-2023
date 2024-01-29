@@ -44,7 +44,7 @@ def main():
         y_pred = pm.StudentT('y_pred', mu=mu, sigma=epsilon, nu=ν, observed=y)
         trace = pm.sample(10, tune=10, return_inferencedata=True)
     # simulam 10*2 = 20 extrageri
-    # cream modelul sub forma de y = b0 *rn + b1* crin + b2*indus, unde y =medv
+    # cream modelul sub forma de y = alpha + b0 *rn + b1* crin + b2*indus, unde y =medv
 
     # c
     az.plot_forest(trace, hdi_prob=0.95, var_names=['beta'])
